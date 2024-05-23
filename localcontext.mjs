@@ -1,6 +1,9 @@
-export const localContext = `
-Context:
-OLD MESSAGES:
-NEW MESSAGES:
-User: Create a basic http server that listens on port 3333
-`
+import { readFileSync } from 'fs';
+import { GoogleGenerativeAI } from '@google/generative-ai';
+
+const choice = readFileSync('choice.txt', 'utf-8').trim();
+const genAI = new GoogleGenerativeAI(process.env.API_KEY);
+
+const model = choice === 'Gemini' ? genAI.getGenerativeModel({ model: 'gemini-pro' }) : null;
+
+export default model;
