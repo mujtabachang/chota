@@ -10,9 +10,9 @@ jobs:
   branch-actions:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: asadm/chota@3b117de11ebc90e7117895fbad57203c940cba05
-      with:
+      - name: Checkout code
+        uses: mujtabachang/chota@latest
+        with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           SERP_API_KEY: ${{ secrets.SERP_API_KEY }}
